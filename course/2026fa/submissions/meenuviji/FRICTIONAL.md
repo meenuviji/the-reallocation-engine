@@ -149,3 +149,5 @@ Honest log of attempts, expectations, what happened, and what I checked. Human v
 - **Integrity correction:** SOURCES.md said I committed 53cc80a. Claude Code ran that commit at my instruction; I ran every later commit in Terminal. Corrected in SOURCES.md.
 - **Answered open question:** a null sponsorship p is dropped by the scorer, not zero-filled, confirmed by test_null_sponsorship_p_through_real_scorer.
 - **Response:** Fixed all partial items in one commit (CHANGE-BRIEF Revision 3, label scope documented, justification trimmed, SOURCES corrected), rebuilt the ZIP and SUBMISSION.md for the new SHA, and asked the maintainer on the PR to approve CI.
+
+- **Correction (same day):** I decided not to post the PR comment asking the maintainer to approve CI. The "Response" line above saying I asked is therefore incorrect; CI approval is left to the maintainer's normal process.
