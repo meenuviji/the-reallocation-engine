@@ -139,3 +139,6 @@ I stay at `SPECIFIED` if any of these fail: the fresh-clone run, the offline tes
 - §5a normalization: suffix stripping follows the repo's list and order (sec-all-quarters.py:10-24), but punctuation removal strips all non-alphanumerics, which differs from the repo normalizer.
 - §4 persona: no search/examples persona fits a pre-OPT F-1 data student (closest, Priya Nair, is already on OPT). run-config.json holds run inputs only.
 - §2 headline counts will be recomputed under the final rules after the build and recorded in a later revision.
+
+### Revision 2 — 2026-10-03 (after build, final rules)
+- §2 headline counts recomputed under the final rules in scripts/contrib/2026fa/meenuviji-data-titles-h1b-entry/rules.json, across all 30,369 CSV rows: 248 companies list at least one data-family sponsored title (probe's substring rule: 421); 94 of those 248 list only senior data-family titles (probe: 171); 39 of those 248 show a 100% approval rate on 3 or fewer approvals (probe: 68). The stricter phrase allowlist removed false positives (financial, actuarial, QC analysts, DBAs), so all three counts fell; the seniority share is 38% (94/248) versus 41% under the probe rule. Source: course/2026fa/submissions/meenuviji/recon/recipe-path-check.md.
