@@ -205,6 +205,8 @@ Each `scored[]` entry holds:
 
 Every value carries `{value, label}` with label ∈ `record` / `your-input` / `model-judgment`.
 
+Labels apply to every evidence and scoring value. Posting identifiers (posting_id, title, target_title, url, company_input, purpose) are your-input from the fictional sample postings. Stop and refusal reasons and run metadata (status, exit_code, run_id, scorer command and stdout) are produced by the prototype itself and are not evidence, so they carry no record/model-judgment/your-input label.
+
 The scorer's own files are written beside it: `out/roles.json` (the input sent) and `out/score/role-scores.json` + `out/score/role-scores.md`.
 
 ### Human report — `scripts/contrib/2026fa/meenuviji-data-titles-h1b-entry/out/report.md`

@@ -141,3 +141,11 @@ Honest log of attempts, expectations, what happened, and what I checked. Human v
 ## 2026-10-03 — What I learned
 
 - ME (Meena): Getting a working result is not enough. I need to understand why a test changed, verify ambiguous evidence myself, and keep missing or uncertain information visible instead of making assumptions to complete the result.
+
+## 2026-10-03 — Final rubric audit
+
+- **Tried:** Asked Claude Code for a read-only audit of every assignment requirement against the files, the PR, and the Canvas ZIP (/tmp/RUBRIC-AUDIT.md, not committed).
+- **Found:** All core checks pass (git state, scope, fresh-clone run, 28 tests, conformance, privacy, ZIP identical to the commit). Partial items: one wrong path in CHANGE-BRIEF §4; identifier and metadata fields in run.json without labels; domain justification slightly over the word target; SUBMISSION.md's CI wording out of date. CI on PR #29: two runs ended "failure" with 0 jobs and two await maintainer approval, so none of my code ran in CI.
+- **Integrity correction:** SOURCES.md said I committed 53cc80a. Claude Code ran that commit at my instruction; I ran every later commit in Terminal. Corrected in SOURCES.md.
+- **Answered open question:** a null sponsorship p is dropped by the scorer, not zero-filled, confirmed by test_null_sponsorship_p_through_real_scorer.
+- **Response:** Fixed all partial items in one commit (CHANGE-BRIEF Revision 3, label scope documented, justification trimmed, SOURCES corrected), rebuilt the ZIP and SUBMISSION.md for the new SHA, and asked the maintainer on the PR to approve CI.

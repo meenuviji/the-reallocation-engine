@@ -28,6 +28,8 @@ python3 scripts/contrib/2026fa/meenuviji-data-titles-h1b-entry/run.py
 
 Writes `out/roles.json`, `out/score/role-scores.{json,md}` (from the unmodified scorer), `out/run.json` (agent log) and `out/report.md` (human report). Options: `--postings`, `--config`, `--rules`, `--out`.
 
+Labels apply to every evidence and scoring value. Posting identifiers (posting_id, title, target_title, url, company_input, purpose) are your-input from the fictional sample postings. Stop and refusal reasons and run metadata (status, exit_code, run_id, scorer command and stdout) are produced by the prototype itself and are not evidence, so they carry no record/model-judgment/your-input label.
+
 Exit codes: `0` clean · `3` completed, but at least one posting stopped at the company-match gate or was refused for a missing gate value · `1` whole-run failure (missing/changed data file, SHA-256 mismatch, unlabeled rule, scorer failure) · `2` bad arguments.
 
 ## Test
