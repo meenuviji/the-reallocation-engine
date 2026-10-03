@@ -1,7 +1,7 @@
 ---
 status: DRAFT
-todos_open: 7
-last_gate: null
+todos_open: 6
+last_gate: "sample-run human review, 2026-10-03, logs/runs/2026fa-meenuviji-1.md"
 attestation: null
 recipe_version: 0.1.0
 ---
@@ -29,7 +29,7 @@ recipe_version: 0.1.0
 
 "Looks right" is not the condition.
 
-Status is DRAFT under SNICKERDOODLE.md's lifecycle rules because seven open TODO items remain (six proposed additions and one human approval gate); the prototype itself runs end to end on sample data with 28 offline tests (scripts/contrib/2026fa/meenuviji-data-titles-h1b-entry/).
+Status is DRAFT under SNICKERDOODLE.md's lifecycle rules because six proposed additions remain open TODO items; the prototype itself runs end to end on sample data with 28 offline tests (scripts/contrib/2026fa/meenuviji-data-titles-h1b-entry/).
 
 ---
 
@@ -128,7 +128,7 @@ Whole-run failures (exit 1, no `out/report.md`, the reason is recorded in `out/r
 - npm or scorer failure;
 - scorer output whose role ids differ from the roles sent.
 
-Gate decisions by a named human are not yet logged anywhere. `logs/gate-decisions/` does not exist. `[TODO: APPROVE]` Record the first human clearance of a sample run in a `logs/runs/` entry (template below), with name and date.
+`logs/gate-decisions/` does not exist; gate decisions are logged in `logs/runs/` instead. Closed: human review of the sample run logged in logs/runs/2026fa-meenuviji-1.md (Meena, 2026-10-03).
 
 ---
 
@@ -263,7 +263,7 @@ In the current sample run, 2 Apply, 8 Consider and 2 Skip, so the skip rate is 1
 | `role_quality` weight is 0.0 | Yes | BLS wage context is shown but cannot move a recommendation. Proposed addition 3. |
 | `bls:local-wage` feeds nothing | Yes, by design | Not used. National OEWS only (CHANGE-BRIEF §6). |
 | Only SEC Form D samples ship | Yes | `data/sec/form-d/` holds only `data/sec/form-d/processed/` (four 50-record samples in `data/sec/form-d/processed/sample/` plus `data/sec/form-d/processed/recent-sec-quarters-audit.md`). Form D is excluded: 128 of 200 sample records are pooled investment funds, and only 14 names match the 80 Days CSV after normalization, 1 of them (Databricks) with sponsorship data (PROBE-REPORT §C). |
-| `data/raw/`, `data/verified/`, `logs/gate-decisions/` do not exist | Yes | Confirmed absent. This recipe writes only to its own `out/` folder and points at no planned directory. Gate clearances go to a `logs/runs/` entry (see the approval item under Phase gates). |
+| `data/raw/`, `data/verified/`, `logs/gate-decisions/` do not exist | Yes | Confirmed absent. This recipe writes only to its own `out/` folder and points at no planned directory. Gate clearances go to a `logs/runs/` entry (`logs/runs/2026fa-meenuviji-1.md`). |
 | The `snickerdoodle` CLI is roadmap | Yes | No CLI commands are given here. The agent runs the Python command and stops at each gate (DOMAIN.md, Runtime). |
 | All recipes DRAFT | Partly | `npm run doctor` currently reports DRAFT 28 · RUNNABLE-SAMPLE 4 · VERIFIED 1 (`course/2026fa/submissions/meenuviji/recon/raw-output.txt`, Phase 0). |
 | `bls:local-wage` fails without `.venv` | Not used | `scripts/bls/local-wage-adjustment.py` stops with "missing .venv" when `.venv` is absent (it is absent in this clone). |
@@ -285,7 +285,7 @@ In the current sample run, 2 Apply, 8 Consider and 2 Skip, so the skip rate is 1
 
 ## Run-log template (`logs/runs/`)
 
-Per `CONTRIBUTING.md`, run logs go in `logs/runs/<term>-<handle>-<n>.md` and never in `logs/RUN_LOG.md`. The first entry would be `logs/runs/2026fa-meenuviji-1.md`; it does not exist yet (see the approval item under Phase gates). Fields follow `recipes/_shared.md`:
+Per `CONTRIBUTING.md`, run logs go in `logs/runs/<term>-<handle>-<n>.md` and never in `logs/RUN_LOG.md`. The first entry is `logs/runs/2026fa-meenuviji-1.md`. Fields follow `recipes/_shared.md`:
 
 ```markdown
 ## YYYY-MM-DD — data-titles-h1b-entry sample run
