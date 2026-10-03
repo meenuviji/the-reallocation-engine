@@ -132,4 +132,10 @@ I stay at `SPECIFIED` if any of these fail: the fresh-clone run, the offline tes
 
 ## Revisions
 
-_None yet._
+### Revision 1 — 2026-10-03 (during Phase 3b build)
+- §7 timeline gate corrected: a projected start before opt_start is a deferred start (noted, factor 1.0), not a failure; only a projected start after opt_start + window_days fails. Original rule treated early starts as failures, which would have gated every role for a pre-OPT student applying months ahead. Found when the build needed an artificial future as_of to produce any non-gated result.
+- §5d tier rows made unambiguous with explicit precedence: (1) no record -> unknown, null; (2) record but no data-family title -> possible, 0.3; (3) entry-or-unmarked data-family title AND approvals >= 5 -> Proven, 0.7; (4) otherwise -> possible, 0.5.
+- §5c level numbers clarified: standalone tokens anywhere in the title; I/1 entry, II/2 mid, III/IV/3+ senior.
+- §5a normalization: suffix stripping follows the repo's list and order (sec-all-quarters.py:10-24), but punctuation removal strips all non-alphanumerics, which differs from the repo normalizer.
+- §4 persona: no search/examples persona fits a pre-OPT F-1 data student (closest, Priya Nair, is already on OPT). run-config.json holds run inputs only.
+- §2 headline counts will be recomputed under the final rules after the build and recorded in a later revision.
